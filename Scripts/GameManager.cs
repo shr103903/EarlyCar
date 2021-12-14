@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int stageNum = 1;
     public float playTime;
     public Text currentStageText;
+    public Text stageTextStop;
     public Text moveStageText;
     public Text timeNext;
     public Text clearTimeText;
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
     {
         playTime += Time.deltaTime;
 
-        currentStageText.text = stageNum.ToString("000");        //현재 플레이 중인 스테이지
+        currentStageText.text = stageNum.ToString("000");  //현재 플레이 중인 스테이지
+        stageTextStop.text = "stage " + stageNum.ToString("000");
         moveStageText.text = "Clear Stage" + (stageNum - 1).ToString("000") + "!!!";     //방금 클리어한 스테이지
         timeNext.text = ">>" + ((int)car.setNextTime + 1) + "s";      //방금 클리어한 스테이지 클리어 시간
 
